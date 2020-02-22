@@ -10,7 +10,7 @@ import com.capgemini.moviedto.ScreenDetails;
 import com.capgemini.moviedto.Show;
 
 public class MovieDAO implements IMovieDAO {
-//Creating HashMap with with theatre Id as key and Details of Show as Hashset in value..
+//Creating HashMap with with theater Id as key and Details of Show as Hashset in value..
 	static Map<Integer, HashSet<Show>> map = new HashMap<Integer, HashSet<Show>>();
 
 	// Show d = new Show();
