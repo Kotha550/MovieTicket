@@ -63,5 +63,11 @@ public ResponseEntity<Movie>deleteMovie(@PathVariable("id") int movieId) throws 
 	}
 	return rt;
 }
+	@GetMapping("get/name/{movieName}")
+	public ResponseEntity<Movie> GetByMovieName(@PathVariable String movieName){
+		 
+		 return new ResponseEntity<Movie>(service.getByMovieName(movieName),HttpStatus.OK);
+	}
+
 
 }

@@ -8,7 +8,7 @@ public interface IMovieService {
 	public Movie updateMovie(Movie movie) throws MovieException;
 
 	public Boolean deleteMovieById(int movieId) throws MovieException;
-	
+	public Movie getByMovieName(String movieName);
 	public Movie getMovieById(int movieId);
 	public boolean validateMovieId(int movieId)throws MovieException;
 }

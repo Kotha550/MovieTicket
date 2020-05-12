@@ -47,4 +47,10 @@ public class MovieServiceImpl implements IMovieService {
 		return true;
 	}
 
+	@Override
+	public Movie getByMovieName(String movieName) {
+		
+		return repo.getByMovieName(movieName);
+	}
+
 }
