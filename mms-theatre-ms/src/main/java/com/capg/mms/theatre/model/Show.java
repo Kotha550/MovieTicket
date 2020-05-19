@@ -4,17 +4,12 @@ package com.capg.mms.theatre.model;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -32,12 +27,9 @@ private List<Integer> seats;
 @ManyToOne(fetch = FetchType.LAZY)
 @JoinColumn(name="screenId")
 @JsonBackReference
-//@ManyToOne
-//@JoinColumn(name="screenId")
 private Screen screen;
 private String showName;
 private Integer movieId;
-//private int screenId;
 private Integer theatreId;
 public Show() {
 	super();
@@ -53,7 +45,6 @@ public Show(Integer showId, LocalDateTime showStartTime, LocalDateTime showEndTi
 	this.screen = screen;
 	this.showName = showName;
 	this.movieId = movieId;
-	//this.screenId = screenId;
 	this.theatreId = theatreId;
 }
 
@@ -103,11 +94,6 @@ public Integer getMovieId() {
 public void setMovieId(Integer movieId) {
 	this.movieId = movieId;
 }
-
-	/*
-	 * public int getScreenId() { return screenId; } public void setScreenId(int
-	 * screenId) { this.screenId = screenId; }
-	 */
 public Integer getTheatreId() {
 	return theatreId;
 }

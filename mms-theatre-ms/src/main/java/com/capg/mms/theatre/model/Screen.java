@@ -21,16 +21,11 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 @Table(name = "screen")
 public class Screen {
 	@Id
-	//@Size(min=4, message = "ScreenId must be minimum of 4 digits")
-	//@GeneratedValue
 	private Integer screenId;
-//private Integer theatreId;
 	private String screenName;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "theatreId")
 	@JsonBackReference
-	//@ManyToOne
-	//@JoinColumn(name="theaterid")
 	private Theatre theatre;
 	public Theatre getTheatre() {
 		return theatre;
@@ -38,10 +33,7 @@ public class Screen {
 	public void setTheatre(Theatre theatre) {
 		this.theatre = theatre;
 	}
-
 	@OneToMany(mappedBy = "screen", cascade = CascadeType.ALL)
-	//@OneToMany(mappedBy ="screen")
-	//@JsonIgnore
 	private List<Show> showList;
 	@DateTimeFormat(pattern = "yyyy-MM-dd ")
 	private LocalDate movieEndDate;
@@ -58,10 +50,8 @@ public class Screen {
 			LocalDate movieEndDate, Integer rows, Integer columns) {
 		super();
 		this.screenId = screenId;
-//	this.theatreId = theatreId;
 		this.screenName = screenName;
 		this.theatre = theatre;
-//	this.showList = showList;
 		this.movieEndDate = movieEndDate;
 		this.rows = rows;
 		this.columns = columns;
@@ -74,12 +64,7 @@ public class Screen {
 	public void setScreenId(Integer screenId) {
 		this.screenId = screenId;
 	}
-
-	
-	/*
-	 * public Integer getTheatreId() { return theatreId; } public void setTheatreId(Integer
-	 * theatreId) { this.theatreId = theatreId; }
-	 */
+	 
 	public String getScreenName() {
 		return screenName;
 	}

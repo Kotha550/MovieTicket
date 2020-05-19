@@ -9,8 +9,5 @@ public class TheatreException extends RuntimeException {
 		super(message);
 	
 	}
-	public TheatreException()
-	{
-		super();
-	}
+	
 }
